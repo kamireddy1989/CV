@@ -14,7 +14,7 @@ import time
 
 st=time.time()
 
-path='C:\\Users\\kamir\\OneDrive\\Desktop\\Certificates\\Srinu\\Matlab\\Covariance\\*.csv'
+path='Choose the file path'
 files=glob.glob(path)
 #files=fileext('C:/Users/kamir/OneDrive/Desktop/Certificates/Srinu/Matlab/Covariance/ETF','csv',True)
 dt=pd.concat((pd.read_csv(file) for file in files),ignore_index=True,axis=1)
