@@ -9,7 +9,7 @@ import numpy as np
 import pandas as pd
 import matplotlib.pyplot as plt
 
-dt=pd.read_csv('C:/Users/kamir/OneDrive/Desktop/Python/mreg1.csv')
+dt=pd.read_csv('')# Enter Path of the file
 x=dt.to_numpy()
 y=x[:,-1]
 c=np.ones(len(x))
