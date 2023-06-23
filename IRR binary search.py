@@ -1,10 +1,11 @@
 import numpy as np
-
-def binary_search(inv,t,ub,lb=0):
+# Function for binary search almgorith
+def binary_search(inv,t,ub,lb=0): 
+    """ Inv is list or array,t time period, ub upper bound, lower bound"""
     rate=lb
     npv=np.sum(inv/(1+(rate/100))**t)
     i=0
-    while(True):
+    while(True):   
         if(npv>0):
             lb=rate
             ub=ub
@@ -15,12 +16,12 @@ def binary_search(inv,t,ub,lb=0):
         npv=np.sum(inv/(1+(rate/100))**t)
         if(npv<=1e-10 and npv>=1e-12):
             break
-        if(i>1000):
+        if(i>1000): """loop will break after 1000 iterations if no feasible solution """
             print('Solution did not converge')
             break
         i+=1
     return(i,rate,npv)
-        
+ """Example"""      
 arr=np.array([[-100,0,0,0,100,100],[0,1,2,3,4,5]])
 
 x=binary_search(arr[0],arr[1],ub=90)
